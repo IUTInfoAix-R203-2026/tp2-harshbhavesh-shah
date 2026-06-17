@@ -3,7 +3,6 @@ package fr.univ_amu.iut.exercice4;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /// Tests de l'exercice 4 : Robot + SimulateurDeRobot.
@@ -19,14 +18,12 @@ class RobotTest {
 
   // ========= Création =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_memorise_position() {
     Robot robot = new Robot(new Position(0, 0), Orientation.NORD);
     assertThat(robot.getPosition()).isEqualTo(new Position(0, 0));
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_memorise_orientation() {
     Robot robot = new Robot(new Position(0, 0), Orientation.EST);
@@ -35,7 +32,6 @@ class RobotTest {
 
   // ========= tournerADroite =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_tourne_a_droite_depuis_nord_donne_est() {
     Robot robot = new Robot(new Position(0, 0), Orientation.NORD);
@@ -43,7 +39,6 @@ class RobotTest {
     assertThat(robot.getOrientation()).isEqualTo(Orientation.EST);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_tourne_a_droite_depuis_est_donne_sud() {
     Robot robot = new Robot(new Position(0, 0), Orientation.EST);
@@ -51,7 +46,6 @@ class RobotTest {
     assertThat(robot.getOrientation()).isEqualTo(Orientation.SUD);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_tourne_a_droite_depuis_sud_donne_ouest() {
     Robot robot = new Robot(new Position(0, 0), Orientation.SUD);
@@ -59,7 +53,6 @@ class RobotTest {
     assertThat(robot.getOrientation()).isEqualTo(Orientation.OUEST);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_tourne_a_droite_depuis_ouest_donne_nord() {
     Robot robot = new Robot(new Position(0, 0), Orientation.OUEST);
@@ -67,7 +60,6 @@ class RobotTest {
     assertThat(robot.getOrientation()).isEqualTo(Orientation.NORD);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_tourne_a_droite_sans_changer_la_position() {
     Robot robot = new Robot(new Position(3, 7), Orientation.NORD);
@@ -77,7 +69,6 @@ class RobotTest {
 
   // ========= tournerAGauche =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_tourne_a_gauche_depuis_nord_donne_ouest() {
     Robot robot = new Robot(new Position(0, 0), Orientation.NORD);
@@ -85,7 +76,6 @@ class RobotTest {
     assertThat(robot.getOrientation()).isEqualTo(Orientation.OUEST);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_tourne_a_gauche_depuis_ouest_donne_sud() {
     Robot robot = new Robot(new Position(0, 0), Orientation.OUEST);
@@ -93,7 +83,6 @@ class RobotTest {
     assertThat(robot.getOrientation()).isEqualTo(Orientation.SUD);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_tourne_a_gauche_depuis_sud_donne_est() {
     Robot robot = new Robot(new Position(0, 0), Orientation.SUD);
@@ -101,7 +90,6 @@ class RobotTest {
     assertThat(robot.getOrientation()).isEqualTo(Orientation.EST);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_tourne_a_gauche_depuis_est_donne_nord() {
     Robot robot = new Robot(new Position(0, 0), Orientation.EST);
@@ -111,7 +99,6 @@ class RobotTest {
 
   // ========= avancer =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_avance_vers_le_nord_augmente_y() {
     Robot robot = new Robot(new Position(5, 5), Orientation.NORD);
@@ -119,7 +106,6 @@ class RobotTest {
     assertThat(robot.getPosition()).isEqualTo(new Position(5, 6));
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_avance_vers_l_est_augmente_x() {
     Robot robot = new Robot(new Position(5, 5), Orientation.EST);
@@ -127,7 +113,6 @@ class RobotTest {
     assertThat(robot.getPosition()).isEqualTo(new Position(6, 5));
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_avance_vers_le_sud_diminue_y() {
     Robot robot = new Robot(new Position(5, 5), Orientation.SUD);
@@ -135,7 +120,6 @@ class RobotTest {
     assertThat(robot.getPosition()).isEqualTo(new Position(5, 4));
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_avance_vers_l_ouest_diminue_x() {
     Robot robot = new Robot(new Position(5, 5), Orientation.OUEST);
@@ -143,7 +127,6 @@ class RobotTest {
     assertThat(robot.getPosition()).isEqualTo(new Position(4, 5));
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_robot_avance_sans_changer_l_orientation() {
     Robot robot = new Robot(new Position(0, 0), Orientation.NORD);
@@ -153,7 +136,6 @@ class RobotTest {
 
   // ========= SimulateurDeRobot =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_simulateur_execute_raalal_depuis_7_3_nord_donne_position_9_4_ouest() {
     Robot robot = new Robot(new Position(7, 3), Orientation.NORD);
@@ -165,7 +147,6 @@ class RobotTest {
     assertThat(robot.getOrientation()).isEqualTo(Orientation.OUEST);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_simulateur_execute_sequence_vide_sans_rien_modifier() {
     Robot robot = new Robot(new Position(5, 5), Orientation.SUD);
@@ -177,7 +158,6 @@ class RobotTest {
     assertThat(robot.getOrientation()).isEqualTo(Orientation.SUD);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_simulateur_avec_commande_inconnue_leve_exception() {
     Robot robot = new Robot(new Position(0, 0), Orientation.NORD);

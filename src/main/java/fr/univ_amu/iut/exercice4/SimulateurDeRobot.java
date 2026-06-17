@@ -1,15 +1,19 @@
 package fr.univ_amu.iut.exercice4;
 
-/// Simulateur qui exécute une séquence de commandes sur un [Robot].
-///
-/// Commandes :
-///
-/// - `R` - tourner à droite
-/// - `L` - tourner à gauche
-/// - `A` - avancer d'une case
-///
-/// Exemple : `"RAALAL"` exécuté depuis `(7, 3)` en [Orientation#NORD] termine en `(9, 4)` en
-/// [Orientation#OUEST].
+/**
+ * Simulateur qui exécute une séquence de commandes sur un {@link Robot}.
+ *
+ * <p>Commandes :
+ *
+ * <ul>
+ *   <li>{@code 'R'} - tourner à droite
+ *   <li>{@code 'L'} - tourner à gauche
+ *   <li>{@code 'A'} - avancer d'une case
+ * </ul>
+ *
+ * <p>Exemple : {@code "RAALAL"} exécuté depuis {@code (7, 3)} en {@link Orientation#NORD} termine
+ * en {@code (9, 4)} en {@link Orientation#OUEST}.
+ */
 public class SimulateurDeRobot {
 
   private final Robot robot;
@@ -18,12 +22,28 @@ public class SimulateurDeRobot {
     this.robot = robot;
   }
 
-  /// Exécute la séquence de commandes dans l'ordre.
-  ///
-  /// @param commandes chaîne composée uniquement des caractères `R`, `L` et `A`
-  /// @throws IllegalArgumentException si un caractère inconnu est rencontré
+  /**
+   * Exécute la séquence de commandes dans l'ordre.
+   *
+   * @param commandes chaîne composée uniquement des caractères {@code R}, {@code L} et {@code A}
+   * @throws IllegalArgumentException si un caractère inconnu est rencontré
+   */
   public void executer(String commandes) {
-    // TODO exercice 4 : appliquer chaque commande au robot l'une après l'autre.
+    for (char car : commandes.toCharArray())
+      switch (car) {
+        case 'A':
+          robot.avancer();
+          break;
+        case 'L':
+          robot.tournerAGauche();
+          break;
+        case 'R':
+          robot.tournerADroite();
+          break;
+        default:
+          throw new IllegalArgumentException();
+      }
+
     // Bonus : levez IllegalArgumentException pour tout caractère autre que R, L, A.
   }
 
